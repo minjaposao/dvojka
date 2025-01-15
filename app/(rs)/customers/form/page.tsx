@@ -1,5 +1,6 @@
 import { BackButton } from "@/components/BackButton";
 import { getCustomer } from "@/lib/queries/getCustomer";
+import CustomerForm from "./CustomerForm";
 
 
 export default async function CustomerFormPage({
@@ -24,8 +25,10 @@ try {
         }
         console.log(customer)
         //put customer from component
+        return <CustomerForm customer={customer} />
     }else{
         //new customer from component
+        return <CustomerForm/>
     }
 } catch (e) {
     if(e instanceof Error){
